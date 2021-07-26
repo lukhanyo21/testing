@@ -1,0 +1,72 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contents %}
+
+
+<!-- Page header -->
+{#{% include 'header.html' %}#}
+
+<div class="page-header">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">{{ parent }}</span> - {{ page }}</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+        <div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">
+            <div class="btn-group">
+                <button type="button" class="btn bg-indigo-400"><i class="icon-stack2 mr-2"></i> Actions</button>
+                <button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown"></button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">Actions</div>
+                    <a href="{% url 'tasks:add_task' %}" class="dropdown-item"><i class="icon-plus-circle2"></i> Add Time</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Content area -->
+<div class="content pt-0">
+{% if messages %}
+
+    {% for message in messages %}
+
+    <div class="alert alert-success border-0 alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>{{ message }}.
+    </div>
+    {% endfor %}
+
+    {% endif %}
+<table class="footable table">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Status</th>
+            <th>Modify</th>
+            <th>Delete</th>
+		</tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.availability|date:"d-M-Y"  }}</td>
+            <td>{{ task.availability|date:"H:m" }}</td>
+            <td>test</td>
+            <td><a href="{% url 'tasks:edit_task' task.id %}"><i class="icon-pencil7"></i></a></td>
+
+            <td><a href="{% url 'tasks:delete_task' task.id %}"><i class="icon-minus-circle2"></i></a></td>
+        </tr>
+        {% endfor %}
+	</thead>
+</table>
+
+</div>
+<!-- /content area -->
+
+
+{% endblock %}

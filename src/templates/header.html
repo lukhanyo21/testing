@@ -1,0 +1,19 @@
+<div class="page-header">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">{{ parent }}</span> - {{ page }}</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+        <div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">
+            <div class="btn-group">
+                <button type="button" class="btn bg-indigo-400"><i class="icon-stack2 mr-2"></i> Actions</button>
+                <button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown"></button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">Actions</div>
+                    <a href="{% url 'add_site' %}" class="dropdown-item"><i class="icon-plus-circle2"></i> Add Site</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+{% load static %}
+<div class="navbar navbar-expand-md navbar-light">
+
+	<!-- Header with logos -->
+	<div class="navbar-header navbar-dark d-none d-md-flex align-items-md-center">
+		<div class="navbar-brand navbar-brand-md">
+			<a href="{% url 'dashboard:dashboard' %}" class="d-inline-block">
+				<img src="{% static 'global_assets/images/en2.png' %}" alt="" height="100">
+			</a>
+		</div>
+
+		<div class="navbar-brand navbar-brand-xs">
+			<a href="" class="d-inline-block">
+				<img src="{% static 'global_assets/images/logo_icon_light.png' %}" alt="">
+			</a>
+		</div>
+	</div>
+	<!-- /header with logos -->
+
+
+	<!-- Mobile controls -->
+	<div class="d-flex flex-1 d-md-none">
+		<div class="navbar-brand mr-auto">
+			<a href="index.html" class="d-inline-block">
+
+				<img src="{% static 'assets/global_assets/images/logo_dark.png' %}" alt="">
+			</a>
+		</div>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+			<i class="icon-tree5"></i>
+		</button>
+
+		<button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+			<i class="icon-paragraph-justify3"></i>
+		</button>
+	</div>
+	<!-- /mobile controls -->
+
+
+	<!-- Navbar content -->
+	<div class="collapse navbar-collapse" id="navbar-mobile">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+					<i class="icon-paragraph-justify3"></i>
+				</a>
+			</li>
+
+			<li class="nav-item dropdown">
+				<div class="dropdown-menu dropdown-content wmin-md-300">
+					<div class="dropdown-content-footer bg-light">
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<span class="badge bg-pink-400 badge-pill ml-md-3 mr-md-auto"> </span>
+
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+
+			</li>
+
+			<li class="nav-item dropdown dropdown-user">
+				<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+
+					<img src="{% static 'assets/global_assets/images/placeholders/placeholder.jpg' %}" class="rounded-circle mr-2" height="34" alt="">
+					<span>{{ user|title }}</span>
+				</a>
+
+				<div class="dropdown-menu dropdown-menu-right">
+					<a href="{% url 'users:edit_profile' request.user.id  %}" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+					<a href="{% url 'logout' %}" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- /navbar content -->
+
+</div>

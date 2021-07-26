@@ -1,0 +1,162 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block contents %}
+
+
+<div class="content pt-0">
+<!-- Quick stats boxes -->
+    {% if messages %}
+
+    {% for message in messages %}
+
+    <div class="alert alert-success border-0 alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>{{ message }}.
+    </div>
+    {% endfor %}
+
+    {% endif %}
+<div class="row">
+    <div class="col-lg-4">
+
+        <!-- Members online -->
+        <div class="card bg-teal-400">
+            <div class="card-body">
+                <div class="d-flex">
+                    <h3 class="font-weight-semibold mb-0">2/7</h3>
+                    <span class="badge bg-teal-800 badge-pill align-self-center ml-auto">+53,6%</span>
+                </div>
+
+                <div>
+                    Active Tasks
+                    <div class="font-size-sm opacity-75">View Details</div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div id="members-online"></div>
+            </div>
+        </div>
+        <!-- /members online -->
+
+    </div>
+
+    <div class="col-lg-4">
+
+        <!-- Current server load -->
+        <div class="card bg-pink-400">
+            <div class="card-body">
+                <div class="d-flex">
+                    <h3 class="font-weight-semibold mb-0">2/2</h3>
+                    <div class="list-icons ml-auto">
+                        <div class="dropdown">
+                            <a href="#" class="list-icons-item dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="#" class="dropdown-item"><i class="icon-sync"></i> View Details</a>
+                                <a href="#" class="dropdown-item"><i class="icon-list-unordered"></i> View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    Picmix
+                    <div class="font-size-sm opacity-75">other details</div>
+                </div>
+            </div>
+
+            <div id="server-load"></div>
+        </div>
+        <!-- /current server load -->
+
+    </div>
+
+    <div class="col-lg-4">
+
+        <!-- Today's revenue -->
+        <div class="card bg-blue-400">
+            <div class="card-body">
+                <div class="d-flex">
+                    <h3 class="font-weight-semibold mb-0">0/3</h3>
+                    <div class="list-icons ml-auto">
+                        <a class="list-icons-item" data-action="reload"></a>
+                    </div>
+                </div>
+
+                <div>
+                    Users
+                    <div class="font-size-sm opacity-75">More Info</div>
+                </div>
+            </div>
+
+            <div id="today-revenue"></div>
+        </div>
+        <!-- /today's revenue -->
+
+    </div>
+</div>
+<!-- /quick stats boxes -->
+
+<!-- Traffic sources -->
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h6 class="card-title">Status</h6>
+        <div class="header-elements">
+            <div class="form-check form-check-right form-check-switchery form-check-switchery-sm">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body py-0">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <a href="#" class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3">
+                        <i class="icon-plus3"></i>
+                    </a>
+                    <div>
+                        <div class="font-weight-semibold">Active Tasks</div>
+                        <span class="text-muted">2/3</span>
+                    </div>
+                </div>
+                <div class="w-75 mx-auto mb-3" id="new-visitorse"></div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <a href="#" class="btn bg-transparent border-warning-400 text-warning-400 rounded-round border-2 btn-icon mr-3">
+                        <i class="icon-watch2"></i>
+                    </a>
+                    <div>
+                        <div class="font-weight-semibold">Picmix</div>
+                        <span class="text-muted">3/3</span>
+                    </div>
+                </div>
+                <div class="w-75 mx-auto mb-3" id="new-sessionse"></div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon mr-3">
+                        <i class="icon-people"></i>
+                    </a>
+                    <div>
+                        <div class="font-weight-semibold">Users</div>
+                        <span class="text-muted"><span class="badge badge-mark border-success mr-2"></span> 4/4</span>
+                    </div>
+                </div>
+                <div class="w-75 mx-auto mb-3" id="total-online"></div>
+            </div>
+        </div>
+    </div>
+
+
+<!--    <div class="chart position-relative" id="traffic-sources"></div>-->
+</div>
+<!-- /traffic sources -->
+
+
+</div>
+{% endblock %}

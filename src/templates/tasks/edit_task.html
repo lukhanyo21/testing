@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block contents %}
+
+<!-- Page header -->
+
+
+<div class="page-header">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">{{ parent }}</span> - {% if task %}{{ edit_page }}
+            {% else %}{{ add_page }}{% endif %}</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Content area -->
+<div class="content pt-0">
+
+<form action="" method="post"   >
+{% csrf_token %}
+      <div class="row">
+        <div class="col-12">
+          {% bootstrap_field form.availability %}
+
+        </div>
+      </div><br>
+    {% if id %}
+      <button type="submit" class="btn btn-primary">Modify</button>
+    {% else %}
+      <button type="submit" class="btn btn-primary">Add</button>
+    {% endif %}
+    <a href="{% url 'tasks:tasks' %}" class="btn btn-primary">Back <i class="icon-undo ml-2"></i></a>
+</form>
+
+</div>
+<!-- /content area -->
+
+<script>
+$(function () {
+        $("#datetimepicker1").datetimepicker();
+      });
+
+    </script>
+
+{% endblock %}
