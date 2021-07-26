@@ -1,4 +1,4 @@
-## Enlabeler System(EPMS)
+## Enlabeler System(ES)
 
 
 # Installation on Windows, Mac and Unix using:
@@ -47,7 +47,13 @@ The app should hosted on [localhost:8000](localhost:8000).
 docker build .
 ```
 ```
-docker-compose build
+docker-compose build"
+
+```
+
+```
+docker-compose run app sh -c "python manage.py runserver 0.0.0.0:8000"
+
 ```
 
 
