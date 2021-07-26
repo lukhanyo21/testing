@@ -41,6 +41,16 @@ python3 manage.py runserver
 ```
 The app should hosted on [localhost:8000](localhost:8000).
 
+# Docker
+
+```
+docker build .
+```
+```
+docker-compose build
+```
+
+
 ## Application Overview
 
 - This is a test
