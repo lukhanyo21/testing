@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block contents %}
+
+<!-- Page header -->
+{#{% include 'header.html' %}#}
+
+<div class="page-header">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><a href="{% url 'dashboard:dashboard' %}"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">{{ parent }}</span> - {{ page }}</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Content area -->
+<div class="content pt-0">
+
+<form action="" method="post"   >
+{% csrf_token %}
+      <div class="row">
+        <div class="col-12">
+          {% bootstrap_field form.first_name %}
+          {% bootstrap_field form.last_name %}
+        </div>
+      </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+</div>
+<!-- /content area -->
+
+
+{% endblock %}
